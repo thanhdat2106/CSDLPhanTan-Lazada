@@ -1,0 +1,76 @@
+﻿
+@{
+    ViewBag.Title = "DangKy";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <html>
+    <head>
+        <title>Đăng kí</title>
+
+        <link href="~/Content/bootstrap.css" rel="stylesheet" />
+
+    </head>
+    
+    <body>
+        @using (Html.BeginForm())
+        {
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-4">
+                    <label>Tên tài khoản</label>
+                    <input class="form-control" type="text" name="TENTK">
+                    <br />
+                    <label>Mật khẩu</label>
+                    <input class="form-control" type="text" name="MK">
+                    <br />
+                    <label>Nhập lại mật khẩu</label>
+                    <input class="form-control" type="text" name="NLMK">
+                </div>
+                <div class="col-lg-5">
+                    <label>Khu vực</label>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="form-check-inline" style="font-size:13px">
+                                <label class="form-check-label">
+                                    <br />
+                                    <input class="form-check-input" placeholder="Miền Nam" type="radio" name="MienNam" value="KV001">Miền Nam
+                                </label>&ensp;&ensp;
+                                <label class="form-check-label">
+                                    <br />
+                                    <input class="form-check-input" placeholder="Miền Trung" type="radio" name="MienTrung" value="KV002">Miền Trung
+                                </label>&ensp;&ensp;
+                                <label class="form-check-label">
+                                    <br />
+                                    <input class="form-check-input" placeholder="Miền Bắc" type="radio" name="MienBac" value="KV003">Miền Bắc
+                                </label>&ensp;
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-2">
+                            <label>Tên đường</label>
+                            <input class="form-control" type="text" name="duong">
+                        </div>
+                        <div class="col-lg-2">
+                            <label>Phường/Xã</label>
+                            <input class="form-control" type="text" name="phuong">
+                        </div>
+                        <div class="col-lg-2">
+                            <label>Quận/Huyện</label>
+                            <input class="form-control" type="text" name="huyen">
+                        </div>
+                        </div>
+
+                        <br />
+                    </div>
+            </div>
+            </div>
+            
+        }
+        </body>
+    </html>
+
+

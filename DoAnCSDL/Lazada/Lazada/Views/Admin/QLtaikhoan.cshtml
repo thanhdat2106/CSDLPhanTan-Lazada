@@ -1,0 +1,10 @@
+﻿@using Lazada.Models;
+
+@if (Session["mancc"].ToString() == "KV001" ||
+    Session["mancc"].ToString() == "KV002" ||
+    Session["mancc"].ToString() == "KV003" )
+{
+
+    <li><a href="media_gallery.html">QL tài khoản khách hàng</a></li>
+    <li><a href="media_gallery.html">QL tài khoản nhà cung cấp</a></li>
+}

@@ -1,0 +1,72 @@
+﻿@model Lazada.Models.SANPHAM
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/Admin.cshtml";
+}
+
+    @*<link href="~/Content/css/bootstrap.css" rel="stylesheet" />*@
+    <div class="container">
+        <h3>Bạn có muốn xóa sản phẩm mày</h3>
+        <div class="login-form">
+            <div class="row">
+            <div class="col-lg-6">
+            <div>
+                @Html.DisplayNameFor(model => model.TENSP)
+                <input type="text" width="100" placeholder="@Html.DisplayFor(model => model.TENSP)" name="TENTK">
+            </div>
+            <div>
+                @Html.DisplayNameFor(model => model.ANH)
+                <br />
+                <img src="~/Content/HinhAnh/@Html.DisplayFor(model => model.ANH)" height="100" width="100" />
+            </div>
+
+            <div>
+                @Html.DisplayNameFor(model => model.DONGIA)
+                <input type="text" width="100" placeholder="@Html.DisplayFor(model => model.DONGIA)" name="DONGIA">
+            </div>
+
+            <div>
+                @Html.DisplayNameFor(model => model.SOLUONG)
+                <input type="text" width="100" placeholder="@Html.DisplayFor(model => model.SOLUONG)" name="SOLUONG">
+            </div>
+
+            <div>
+                @Html.DisplayNameFor(model => model.MALOAI)
+                <input type="text" placeholder=" @Html.DisplayFor(model => model.MALOAI)" name="MALOAI">
+            </div>           
+            </div>
+            <div class="col-lg-6">
+            <div>
+                @Html.DisplayNameFor(model => model.KICHTHUOC)
+                <input type="text" placeholder="@Html.DisplayFor(model => model.KICHTHUOC)" name="KICHTHUOC">
+            </div>
+            <div>
+                @Html.DisplayNameFor(model => model.MAUSAC)
+                <input type="text" placeholder="@Html.DisplayFor(model => model.MAUSAC)" name="MAUSAC">
+            </div>
+            <div>
+                @Html.DisplayNameFor(model => model.TRONGLUONG)
+                <input type="text" placeholder="@Html.DisplayFor(model => model.TRONGLUONG)" name="TRONGLUONG">
+            </div>
+            <div>
+                @Html.DisplayNameFor(model => model.DVT)
+                <input type="text" placeholder="@Html.DisplayFor(model => model.DVT)" name="DVT">
+            </div>
+            <div>
+                @Html.DisplayNameFor(model => model.MANCC)
+                <input type="text" placeholder="@Html.DisplayFor(model => model.MANCC)" name="MANCC">
+            </div>
+            </div>
+            </div>
+        </div>
+    </div>
+@using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <p>
+            <input type="submit" value="Delete" class="btn btn-dark"/> |
+            <a href="~/Admin/Quanlysanpham/@Session["mancc"]">Back to list</a>
+            @Html.ActionLink("Back to List", "Quanlysanpham")
+        </p>
+    }
+

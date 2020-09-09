@@ -1,0 +1,94 @@
+﻿@*@using Lazada.Models;
+@using PagedList.Mvc;
+@model PagedList.PagedList<Lazada.Models.SANPHAM>*@
+@{
+    ViewBag.Title = "Quanlysanpham";
+    Layout = "~/Views/Shared/Admin.cshtml";
+}
+
+@*<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport1" content="width=device-width" />
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    <link href="~/Content/css/bootstrap.css" rel="stylesheet" />
+    <script src="~/Content/jquery_321/jquery-3.2.1.min.js"></script>
+    <script src="https://unpkg.com/popper.js"></script>
+    <script src="~/Content/js/bootstrap.min.js"></script>
+    <meta name="viewport1" content="width=device-width, initial-scale=1">
+</head>
+<body>*@
+    <div class="container ">
+        @using (Html.BeginForm())
+        {
+            <div class="form-group row">
+                <b class="col-sm-2" style="font-size:1.2em">Tên Loại</b> @Html.TextBox("SearchString", (string)ViewBag.searchValue, new { @class = "form-control col-md-2" })
+                <input type="submit" value="Tìm kiếm" class="btn btn-dark col-md-2" style="margin-left:5px" />
+                <button type="button" class="btn btn-dark text col-md-2" style="margin-left:10px"><a href="~/Admin/CreateSP" style="text-decoration:none;">Create</a></button>
+            </div>
+        }
+        <div class="row">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <td>Mã sản phẩm</td>
+                        <td>Tên sản phẩm</td>
+                        <td>Mã loại</td>
+                        <td>Đơn giá</td>
+                        <td>Đơn vị tính</td>
+                        <td>Số lượng</td>
+                        <td>Kích thước</td>
+                        <td>Trọng lượng</td>
+                        <td>Màu sắc</td>
+                        <td>Hình ảnh</td>
+                    </tr>
+                </thead>
+
+                @foreach (var item in Model)
+                {
+            <tr>
+                <td>
+                    @item.MASP
+                </td>
+                <td>
+                    @item.TENSP
+                </td>
+                <td>
+                    @item.MALOAI
+                </td>
+                <td>
+                    @item.DONGIA
+                </td>
+                <td>
+                    @item.DVT
+                </td>
+                <td>
+                    @item.SOLUONG
+                </td>
+                <td>
+                    @item.KICHTHUOC
+                </td>
+                <td>
+                    @item.TRONGLUONG
+                </td>
+                <td>
+                    @item.MAUSAC
+                </td>
+                <td>
+                    <img src="~/Content/HinhAnh/@item.ANH" height="50" width="50" />
+                </td>
+                <td>
+                    <button type="submit" class="btn btn-dark text" style="margin-left:10px"><a href="~/Admin/Delete/?masp=@item.MASP" style="text-decoration:none;">Delete</a></button>
+                    <button type="button" class="btn btn-dark text " style="margin-left:10px"><a href="~/Admin/Edit/?masp=@item.MASP" style="text-decoration:none;">Edit</a></button>
+                </td>
+            </tr>
+                }
+
+            </table>
+        </div>
+       
+    </div>
+@*</body>
+</html>*@
+
